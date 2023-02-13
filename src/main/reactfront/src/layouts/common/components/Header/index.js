@@ -1,5 +1,6 @@
 import Nav from 'react-bootstrap/Nav';
-import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const Header = () => {
     return (
         <>
