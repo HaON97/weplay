@@ -24,7 +24,7 @@ const Bar = styled.div`
         <Navigation
           activeItemId="/main"
           onSelect={({ itemId }) => {
-            if(itemId !== 'list'){
+            if(itemId !== '/list'){
               navigate(itemId);
             }
           }}

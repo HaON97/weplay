@@ -1,4 +1,4 @@
-package com.portfolio.weplay.comm.crawling;
+package com.portfolio.weplay.comm.validation;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
