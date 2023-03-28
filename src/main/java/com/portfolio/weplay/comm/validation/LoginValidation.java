@@ -37,7 +37,7 @@ public class LoginValidation {
         //셀레니움을 이용한 동적 크롤링
         // 크롬 드라이버가 설치된 주소
         // 반영시 경로 수정 필수!!!!! (FINAL CHECK)
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\smt\\Desktop\\프로젝트\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/kj/Downloads/chromedriver_mac64/chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");          // 최대크기로
