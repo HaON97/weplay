@@ -5,7 +5,7 @@ const Separator = styled.hr`
   padding: 0;
   border: 0;
   height: 1px;
-  border-top: 1px solid #fffffe;
+  border-top: 1px solid #888888;
 `;
 
 function NavSeparator() {

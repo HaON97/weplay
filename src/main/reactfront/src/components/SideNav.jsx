@@ -1,5 +1,18 @@
 import Nav from "./nav";
 
+const community = [{
+    id : 1,
+    name : "놀자에요",
+    url : ""
+},
+{
+    id :2,
+    name : "로아톡",
+    url : ""
+}];
+
+const communities = community.map((community) => <Nav.Link>{community.name}</Nav.Link>);
+
 function isActive(path) {
     return window.location.pathname.startsWith(path);
   }
@@ -19,6 +32,7 @@ function SideNav() {
                         Profile
                     </Nav.Link>
                 </Nav.Item>
+                <Nav.Separator />
                 <Nav.Item>
                     <Nav.Link to='/region-raid/kuku' active={isActive("/region-raid")}>
                         Region Raid
@@ -58,8 +72,11 @@ function SideNav() {
                         </Nav.Item>
                     </Nav.List>
                 </Nav.Item>
+                <Nav.Separator />
+                <Nav.Item>{communities}</Nav.Item>
             </Nav.List>
         </Nav>
+
     )
 }
 
