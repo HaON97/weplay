@@ -1,17 +1,24 @@
 import Nav from "./nav";
 
-const community = [{
-    id : 1,
-    name : "놀자에요",
-    url : ""
-},
-{
-    id :2,
-    name : "로아톡",
-    url : ""
-}];
+const community = [
+    {
+        id : 1,
+        name : "놀자에요",
+        url : "nolja"
+    },
+    {
+        id :2,
+        name : "로아톡",
+        url : "talk"
+    },
+    {
+        id :3,
+        name : "ㅇㅇㅇ",
+        url : "ddd"
+    }
+];
 
-const communities = community.map((community) => <Nav.Link>{community.name}</Nav.Link>);
+const communities = community.map((community) => <Nav.Link to={`/board/${community.url}`}>{community.name}</Nav.Link>);
 
 function isActive(path) {
     return window.location.pathname.startsWith(path);
