@@ -1,30 +1,30 @@
-package com.portfolio.weplay.comm;
+package com.portfolio.weplay.comm.func;
 
+import com.portfolio.weplay.comm.vo.CustomResponseEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.nio.charset.Charset;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
-@CrossOrigin(origins = "http://localhost:3000")
-@Controller
-@RequestMapping(value = "/api")
+/**
+ * @Author : HaON
+ * @Comment : 랜덤 문자열 관련 함수 모음 클래스
+ * */
 public class RandomString {
 
     private ResponseEntity<CustomResponseEntity> rec;
     private CustomResponseEntity cre;
     private HttpHeaders header;
 
-    @RequestMapping(method = RequestMethod.POST, value="/getApiKey")
-    public ResponseEntity<CustomResponseEntity> createRandomStrUsingRandomBoolean() {
+    /**
+     * @Author : HaON
+     * @Comment : 알파벳 + 숫자로 이루어진 20자리 랜덤 문자열 생성
+     * */
+    public String MakeUUID() {
         Random random = new Random();
         StringBuffer randomBuf = new StringBuffer();
         for (int i = 0; i < 20; i++) {
@@ -41,26 +41,6 @@ public class RandomString {
         String randomStr = randomBuf.toString();
         System.out.println("[createRandomStrUsingRandomBoolean] randomStr : " + randomStr);
 
-        Map<String, Object> data = new HashMap<String, Object>();
-        cre = new CustomResponseEntity();
-        if(randomStr.length() == 20 || !(randomStr.equals(""))){
-            data.put("apiKey", randomStr);
-            data.put("result", "SUCCESS");
-            cre.setStatus("200");
-            cre.setData(data);
-            cre.setMessage("키발급이 정상적으로 이루어졌습니다.");
-        } else {
-            data.put("result", "SUCCESS");
-            cre.setStatus("200");
-            cre.setData(data);
-            cre.setMessage("키발급에 실패하였습니다.");
-        }
-
-        header = new HttpHeaders();
-        header.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
-
-        rec = new ResponseEntity<CustomResponseEntity>(cre, header, HttpStatus.OK);
-
-        return rec;
+        return randomStr;
     }
 }

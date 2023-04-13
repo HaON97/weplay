@@ -1,4 +1,4 @@
-package com.portfolio.weplay.comm.validation;
+package com.portfolio.weplay.AAAtest;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -11,8 +11,8 @@ import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.X509Certificate;
 /**
- * Author : 하온
- * Comment : SSL 적용된 정적페이지를 크롤링 할때 필요
+ * @Author : HaON
+ * @Comment : SSL 적용된 정적페이지를 크롤링 할때 필요
  * */
 public class SSLHelper {
 

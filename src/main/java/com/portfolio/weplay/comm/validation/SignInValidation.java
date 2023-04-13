@@ -1,6 +1,7 @@
 package com.portfolio.weplay.comm.validation;
 
-import com.portfolio.weplay.comm.CustomResponseEntity;
+import com.portfolio.weplay.comm.func.GetCharacter;
+import com.portfolio.weplay.comm.vo.CustomResponseEntity;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,16 +19,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @Author : HaON
+ * @Comment : 회원가입 시 인증관련 클래스
+ * */
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping(value = "/api")
-public class LoginValidation {
+@RequestMapping(value = "/signin")
+public class SignInValidation {
     //String url = "https://timeline.onstove.com/159967896"; // 009d23204d787121ccfbc08cddb7f78c
     private WebDriver driver;
     private CustomResponseEntity cre;
     private HttpHeaders header;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/login/validation")
+    /**
+     * @Author : HaON
+     * @Comment : 사용자가 입력한 URL, ApiKey, 대표캐릭터 닉네임을 이용하여 인증진행 메소드
+     * */
+    @RequestMapping(method = RequestMethod.POST, value = "/validation")
     public ResponseEntity<CustomResponseEntity> Crawling(@RequestBody Map<String,String> param){
         String userURL = param.get("userURL");
         String userApiKey = param.get("userApiKey");
@@ -76,7 +85,7 @@ public class LoginValidation {
         Map<String, Object> data = new HashMap<String, Object>();
 
         if(certifiedCode.equals(userApiKey)){
-            String getMainChar = new GetCharacterList().IsCharacterList(userCode);
+            String getMainChar = new GetCharacter().IsMainCharacter(userCode);
             if(getMainChar.equals(userMainChar)){
                 data.put("result", "SUCCESS");
                 cre.setStatus("200");

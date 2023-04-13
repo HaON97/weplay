@@ -3,6 +3,7 @@ import './App.css';
 import {SideNavbar, Header, Main, Footer} from './layouts/common/';
 import Party from './layouts/party';
 import Guild from './layouts/guild';
+import {SignUp, SignIn} from './layouts/profile/';
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
           <Route path="/main" element={<Main/>}/>
           <Route path="/guild" element={<Guild/>}/>
           <Route path="/party" element={<Party/>}/>
+          <Route path="/signUp" element={<SignUp/>}/>
+          <Route path="/signIn" element={<SignIn/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>
