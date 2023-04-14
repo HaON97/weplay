@@ -1,22 +1,23 @@
 import Nav from 'react-bootstrap/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function link(props){
-    console.log(props);
-}
-
 const Header = () => {
     return (
         <>
-            <Nav className="justify-content-end">
+            <Nav className="justify-content-end" activeKey="/home">
                 <Nav.Item>
-                <Nav.Link onClick={link("/signUp")}>Sign-Up</Nav.Link>
+                <Nav.Link href="/">Log-In</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link>Schedule</Nav.Link>
+                <Nav.Link eventKey="link-1">Link</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                <Nav.Link>Profile</Nav.Link>
+                <Nav.Link eventKey="link-2">Link</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                <Nav.Link eventKey="disabled" disabled>
+                    Disabled
+                </Nav.Link>
                 </Nav.Item>
             </Nav>
         </>
