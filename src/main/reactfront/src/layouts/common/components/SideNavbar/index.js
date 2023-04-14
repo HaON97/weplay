@@ -11,10 +11,6 @@ const Bar = styled.div`
   top: 200px;
   width: 15%;
   height: 100%;
-  /* position: fixed;
-  left: 19rem;
-  top: 12rem;
-  transform: translate(1em, 12rem); */
 `;
  const SideNavbar = () => {
   const navigate = useNavigate();
