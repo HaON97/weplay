@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import {SideNavbar, Header, Main, Footer} from './layouts/common/';
+import {Header, Main, Footer} from './layouts/common/';
 import Party from './layouts/party';
 import Guild from './layouts/guild';
 import {SignUp, SignIn} from './layouts/profile/';
@@ -21,6 +21,22 @@ const App = () => {
         </Routes>
       </BrowserRouter>
       <Footer/>
+      <Layout>
+        <SideNav />
+        <Original>
+        <Header/>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Main/>}/>
+            <Route path="/main" element={<Main/>}/>
+            <Route path="/guild" element={<Guild/>}/>
+            <Route path="/party" element={<Party/>}/>
+          </Routes>
+        </BrowserRouter>
+        <Footer/>
+        </Original>
+      </Layout>
+
     </div>
   );
 }
