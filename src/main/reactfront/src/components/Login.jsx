@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState} from 'react';
+//import axios from 'axios';
  
 function Login() {
     const [inputId, setInputId] = useState('')
@@ -19,14 +19,14 @@ function Login() {
         console.log('click login')
     }
  
-	// 페이지 렌더링 후 가장 처음 호출되는 함수
-    useEffect(() => {
-        axios.get('/user_inform/login')
-        .then(res => console.log(res))
-        .catch()
-    },
-    // 페이지 호출 후 처음 한번만 호출될 수 있도록 [] 추가
-    [])
+	// // 페이지 렌더링 후 가장 처음 호출되는 함수
+    // useEffect(() => {
+    //     axios.get('/user_inform/login')
+    //     .then(res => console.log(res))
+    //     .catch()
+    // },
+    // // 페이지 호출 후 처음 한번만 호출될 수 있도록 [] 추가
+    // [])
  
     return(
         <div>

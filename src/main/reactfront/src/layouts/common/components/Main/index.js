@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Login from '../../../../components/Login';
+import TestLogin from '../../../../components/TestLogin';
 
 function test() {
     // 'http://localhost:8080/test/testMethod'
@@ -29,7 +29,7 @@ const Main = () => {
             Main
             <button onClick={test}>Test</button>
             <div></div>
-            <Login />
+            <TestLogin />
         </div>
     );
 }
